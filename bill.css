@@ -1,0 +1,188 @@
+/* Global Styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f8ff; /* Light blue background for better contrast */
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.invoice-Form,
+.invoicePreview {
+  width: 48%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #e6f7ff; /* Soft light blue background */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-Form:hover,
+.invoicePreview:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01); /* Slight zoom effect on hover */
+  transition: all 0.3s ease-in-out;
+}
+
+h1,
+h2,
+h3 {
+  color: #004080; /* Dark blue for headings */
+}
+
+label {
+  font-weight: bold;
+  color: #004080;
+}
+
+/* Input Fields */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+input:hover,
+textarea:hover {
+  border-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Date and Number Fields */
+.Date,
+.number,
+.information,
+.phone,
+.email {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#companyLogo,
+#invoiceDate,
+#dueDate,
+#invoiceNumber,
+#companyTaxNumber,
+#customerTaxNumber,
+#companyName,
+#companyAddress,
+#companyPhone,
+#customerPhone,
+#companyEmail,
+#customerEmail {
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+}
+
+#companyLogo:hover,
+#invoiceDate:hover,
+#dueDate:hover,
+#invoiceNumber:hover,
+#companyTaxNumber:hover,
+#customerTaxNumber:hover,
+#companyName:hover,
+#companyAddress:hover,
+#companyPhone:hover,
+#customerPhone:hover,
+#companyEmail:hover,
+#customerEmail:hover {
+  border-color: #007bff;
+}
+
+/* Table */
+#productTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+#productTable thead {
+  background-color: #004080; /* Dark blue for header */
+  color: white;
+}
+
+#productTable th,
+#productTable td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Reduced Width for Add Item Boxes */
+#productBody input {
+  width: 80px; /* Reduced width for Product Name, Price, and Quantity */
+  padding: 8px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#productBody input:hover {
+  border-color: #007bff; /* Highlight border on hover */
+}
+
+#productBody input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Group */
+.form-group {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .invoice-Form,
+  .invoicePreview {
+    width: 100%;
+  }
+}
+
+/* Invoice Preview Section */
+#info,
+#contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#previewProductBody tr:hover {
+  background-color: #e6f7ff; /* Subtle hover for preview rows */
+}

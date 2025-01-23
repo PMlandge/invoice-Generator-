@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="bill.css">
+</head>
+<body>
+    <div class="container">
+        <div class="invoice-Form">
+            <h1>Invoice Generator</h1><br><br> 
+    <div class="Logo">
+    <label>Upload Company Logo: </label>
+    <input type="file" id="companyLogo" accept="C:\Users\Dell\OneDrive\Desktop\invoice_new\logo.png" onchange="updatePreviewImage(this)">
+    </div><br>
+            
+    <div class="Date">
+    <label>Invoice Date:</label>
+    <input type="date" id="invoiceDate">
+    <label>Due Date:</label>
+    <input type="date" id="dueDate">
+    </div><br>
+    <div class="invoice">
+    <input type="text" id="invoiceNumber" placeholder="Enter Invoice Number"required>
+    </div><br>
+                        
+    <div class="number">
+    <input type="text" id="companyTaxNumber" placeholder="Company Tax Number"required>
+    <input type="text" id="customerTaxNumber" placeholder="Customer Tax Number"required>
+    </div><br>
+    <div class="information">
+    <input type="text" id="companyName" placeholder="Your Company Name"required>
+    <input type="text" id="companyAddress" placeholder="Company Address"required>
+    </div><br> 
+    <div class="phone">
+    <input type="text" id="companyPhone" placeholder="Company Phone"required>
+        <input type="text" id="customerPhone" placeholder="Customer Phone"required>
+        </div><br>
+    <div class="email">
+    <input type="email" id="companyEmail" placeholder="Company Email"required>
+    <input type="email" id="customerEmail" placeholder="Customer Email"required>
+    </div><br>
+    <table id="productTable">
+    <thead><br>
+    <tr>
+    <th>Product Name & Description</th>
+    <th>HSN/SAC Code </th>
+    <th>Price</th>
+    <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody id="productBody">
+     <tr>
+    <td><input type="text" id="productName" placeholder="Product Name"></td>
+    <td><input type="text" id="productCode" placeholder="Code"></td>
+    <td><input type="number" id="productPrice"placeholder="Price"></td>
+    <td><input type="number" id="productQuantity"placeholder="Quantity"></td>
+    <td class="productTotal"></td>
+    </tr>
+    </tbody>
+    </table> 
+    <button type="button" onclick="addItem()">Add Item</button>
+    <br>
+    <br>
+
+    <div class="form-group"> 
+        <table> 
+        <tr>       
+    <td><label>Tax (%) </label></td>
+    <td><input type="number" id="tax"placeholder="tax (%) "></td> 
+    </tr>       
+        <tr>
+    <td><label>Discount (%) </label></td>
+    <td><input type="number" id="discount"placeholder="Discount (%)"></td>
+        </tr>
+        <tr>
+   <td> <label>Total:</label></td>
+    <td> <span id="total">0.00</span></td>
+        </tr>
+</table>
+</div>
+    <div class="Bank">
+    <label>Bank Details :</label>
+    <textarea id="bankDetails" placeholder="Enter bank Details"></textarea>
+    </div>
+    <div class="Notes">
+    <label>Notes :</label>
+    <textarea id="notes" placeholder="Enter Additional notes "></textarea>
+    </div>
+    </from>
+    </div>
+    <div class="invoicePreview">
+        <h2>Invoice Preview</h2>
+        
+        <div id="invoicePreviewContent">
+            <p><img id="updatePreviewImage" src="" alt="Company Logo" style="max-width: 100px; display: none;"></p>
+            <p><strong>Invoice Number:</strong> <span id="previewInvoiceNumber">N/A</span></p>
+            <p><strong>Invoice Date:</strong> <span id="previewInvoiceDate">N/A</span></p>
+            <p><strong>Due Date:</strong> <span id="previewDueDate">N/A</span></p>
+    
+            <h3>From:</h3>
+            <div id="info">
+                <p><strong>Company Name:</strong> <span id="previewCompanyName">N/A</span></p>
+            <p><strong>Company Address:</strong> <span id="previewCompanyAddress">N/A</span></p>
+            </div>
+                <div id="contact">
+            <p><strong>Company phone no.:</strong> <span id="previewCompanyPhone">N/A</span></p>
+            <p><strong>Company Email:</strong> <span id="previewCompanyEmail">N/A</span></p>
+                </div>
+            <h3>To:</h3>
+            <p><strong>Customer Email:</strong> <span id="previewCustomerEmail">N/A</span></p>
+    
+            <h3>Products:</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>HSN/SAC Code</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="previewProductBody">
+                    <!-- Product rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+    
+            <h3>Total Amount:</h3>
+            <p id="previewTotalAmount">0.00</p>
+    
+            <h3>Bank Details:</h3>
+            <p id="previewBankDetails">N/A</p>
+    
+            <h3>Notes:</h3>
+            <p id="previewNotes">N/A</p>
+        </div>
+        <button type="button" onclick="printPreview()">Print Invoice</button>
+    </div>    
+    </div>
+    <script src="bill.js"></script>
+                                                                                                                
+
+
+</html>
